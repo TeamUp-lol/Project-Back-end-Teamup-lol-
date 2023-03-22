@@ -8,9 +8,6 @@ RUN npm i
 
 COPY . .
 
-ENV PORT=3000
-ENV DB_HOST=127.0.0.1
-
-EXPOSE ${PORT}
+EXPOSE 3000
 
 CMD [ "npm", "start" ]
