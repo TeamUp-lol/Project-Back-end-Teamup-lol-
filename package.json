@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest --reporter verbose",
-    "start": "tsc-watch --onSuccess 'node ./dist/app.js'"
+    "start": "tsc-watch --onSuccess 'nodemon ./dist/app.js'",
+		"construct": "nodemon --exec ts-node ./src/app.ts --watch"
   },
   "keywords": [],
   "author": "",
@@ -22,8 +23,10 @@
     "typeorm": "^0.3.12"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.1",
     "@types/morgan": "^1.9.4",
     "nodemon": "^2.0.21",
     "supertest": "^6.3.3",

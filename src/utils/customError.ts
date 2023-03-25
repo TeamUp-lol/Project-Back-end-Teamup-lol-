@@ -1,4 +1,4 @@
-interface customErrorInterface extends Error {
+export interface customErrorInterface extends Error {
 	statusCode?: number;
 }
 
@@ -12,7 +12,8 @@ export class CustomError implements customErrorInterface {
 		this.name = "Error";
 		this.message = message;
 		this.statusCode = statusCode;
-		this.error = new Error(this.message);
+		this.error = new Error();
+		this.error.message = this.message; 
 		this.error.statusCode = this.statusCode;
 		
 		throw this.error;

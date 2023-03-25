@@ -6,7 +6,8 @@ class CustomError {
         this.name = "Error";
         this.message = message;
         this.statusCode = statusCode;
-        this.error = new Error(this.message);
+        this.error = new Error();
+        this.error.message = this.message;
         this.error.statusCode = this.statusCode;
         throw this.error;
     }
